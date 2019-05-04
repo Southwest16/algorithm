@@ -87,8 +87,6 @@ public class MinimumPathSum {
         return currMin;
     }
 
-    public
-
     public static void main(String[] args) {
         MinimumPathSum min = new MinimumPathSum();
         //min.back(0, 0, 0);

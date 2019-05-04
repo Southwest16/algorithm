@@ -28,7 +28,8 @@ public class MergeSort {
         while (i<=q && j<=r) {
             if (a[i] <= a[j]) {
                 tmp[k] = a[i]; // i++等于i:=i+1
-                k++; i++;
+                k++;
+                i++;
             } else {
                 tmp[k] = a[j];
                 k++; j++;

@@ -16,7 +16,7 @@ public class Backpack {
         }
         //选择不装第i个物品
         backTrack(i + 1, currWeight);
-        //如果背包当前重量加上第i个物品的重量大于maxWeight, 才选择装入第i个物品,。
+        //如果背包当前重量加上第i个物品的重量大于maxWeight, 才选择装入第i个物品
         if (currWeight + weight[i] <= maxWeight) {
             backTrack(i + 1, currWeight + weight[i]);
         }
@@ -25,7 +25,7 @@ public class Backpack {
     //回溯算法, 避免重复计算
     private boolean[][] mem = new boolean[5][9];
     public void backTrackMemory(int i, int currWeight) {
-        if (currWeight == maxWeight || i == n) {
+        if (i == n || currWeight == maxWeight) {
             if (currWeight > result) result = currWeight;
             return;
         }
@@ -34,7 +34,9 @@ public class Backpack {
         if (mem[i][currWeight]) return;
         mem[i][currWeight] = true;
 
+        //选择不装第i个物品
         backTrackMemory(i+1, currWeight);
+        //如果背包当前重量加上第i个物品的重量大于maxWeight, 才选择装入第i个物品
         if (weight[i]+currWeight <= maxWeight) {
             backTrackMemory(i+1, weight[i]+currWeight);
         }

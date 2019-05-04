@@ -8,7 +8,7 @@ import java.util.Stack;
  * 二叉树的前序、中序、后序遍历
  */
 public class BinaryTreeTraversal {
-    //preorder traversal
+    //前序遍历
     public List<Integer> preorderTraversal(TreeNode root) {
         LinkedList<TreeNode> stack = new LinkedList<>();
         LinkedList<Integer> output = new LinkedList<>();
@@ -17,7 +17,7 @@ public class BinaryTreeTraversal {
         stack.add(root);
         while (!stack.isEmpty()) {
             TreeNode node = stack.pollLast();
-            output.add(node.val);
+            output.add(node.val); //放到链表的尾部
 
             if (node.right != null) stack.add(node.right);
             if (node.left != null) stack.add(node.left);
@@ -25,7 +25,7 @@ public class BinaryTreeTraversal {
         return output;
     }
 
-    // postorder traversal
+    //后序遍历
     public List<Integer> postorderTraversal(TreeNode root) {
         LinkedList<TreeNode> stack = new LinkedList<>();
         LinkedList<Integer> output = new LinkedList<>();
@@ -34,7 +34,7 @@ public class BinaryTreeTraversal {
         stack.add(root);
         while (!stack.isEmpty()) {
             TreeNode node = stack.pollLast();
-            output.addFirst(node.val);
+            output.addFirst(node.val); //放到链表的头部
 
             if (node.left != null) stack.add(node.left);
             if (node.right != null) stack.add(node.right);
@@ -42,7 +42,7 @@ public class BinaryTreeTraversal {
         return output;
     }
 
-    //inorder traversal
+    //中序遍历
     public List<Integer> inorderTraversal(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
         LinkedList<Integer> output = new LinkedList<>();
@@ -74,9 +74,9 @@ public class BinaryTreeTraversal {
         root.right.right = new TreeNode(6);
 
         BinaryTreeTraversal btt = new BinaryTreeTraversal();
-        //System.out.println(btt.postorderTraversal(root));
+        System.out.println(btt.postorderTraversal(root));
         //System.out.println(btt.preorderTraversal(root));
-        System.out.println(btt.inorderTraversal(root));
+        //System.out.println(btt.inorderTraversal(root));
     }
 
 }

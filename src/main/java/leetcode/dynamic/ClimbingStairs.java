@@ -22,7 +22,7 @@ public class ClimbingStairs {
 
     }
 
-    /** Fibonacci */
+    //斐波那契数, 时间复杂度O(n), 空间复杂度O(1)
     public int climbStairs04(int n) {
         int a = 1;
         int b = 2;
@@ -35,7 +35,7 @@ public class ClimbingStairs {
         return c;
     }
 
-    /** 斐波那契通项公式 */
+    //斐波那契通项公式. 时间复杂度O(logn), 空间复杂度O(1)
     public int climbStairs06(int n) {
         double sqrt = Math.sqrt(5);
         double fibn = Math.pow((1 + sqrt) / 2, n + 1) - Math.pow((1 - sqrt) / 2, n + 1);
@@ -54,18 +54,14 @@ public class ClimbingStairs {
         return dp[n];
     }
 
-    /**
-     * 时间复杂度O(N), 空间复杂度O(N)
-     * @param i
-     * @param n
-     * @param memo 保存计算过的台阶
-     * @return
-     */
+    //时间复杂度O(N), 空间复杂度O(N)
     public int climbStairs02(int i, int n, int[] memo) {
         if (i > n) return 0;    //最后一个台阶
         if (i == n) return 1;   //倒数第二个台阶
 
-        return memo[i] > 0 ? memo[i] : (memo[i] = climbStairs02(i + 1, n, memo) + climbStairs02(i + 2, n, memo));
+        return memo[i] > 0
+                ? memo[i]
+                : (memo[i] = climbStairs02(i + 1, n, memo) + climbStairs02(i + 2, n, memo));
     }
 
     /**
