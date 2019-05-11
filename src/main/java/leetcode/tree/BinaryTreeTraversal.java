@@ -64,19 +64,56 @@ public class BinaryTreeTraversal {
         return output;
     }
 
-    public static void main(String[] args) {
-        TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.left.left = new TreeNode(4);
-        root.left.right = new TreeNode(5);
+    private static LinkedList<Integer> output = new LinkedList<>();
 
-        root.right = new TreeNode(3);
-        root.right.right = new TreeNode(6);
+    public void inOrder(TreeNode root) {
+        if (root == null) return;
+
+        inOrder(root.left);
+
+        //System.out.println(root.val);
+        output.add(root.val);
+
+        inOrder(root.right);
+    }
+
+    public void preOrder(TreeNode root) {
+        if (root == null) return;
+
+        output.add(root.val);
+        preOrder(root.left);
+        preOrder(root.right);
+    }
+
+    public void postOrder(TreeNode root) {
+        if (root == null) return;
+
+        postOrder(root.left);
+        postOrder(root.right);
+        output.add(root.val);
+    }
+
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(10);
+        root.left = new TreeNode(5);
+        root.left.left = new TreeNode(3);
+        root.left.right = new TreeNode(6);
+
+        root.right = new TreeNode(12);
+        root.right.right = new TreeNode(15);
 
         BinaryTreeTraversal btt = new BinaryTreeTraversal();
-        System.out.println(btt.postorderTraversal(root));
+        //System.out.println(btt.postorderTraversal(root));
         //System.out.println(btt.preorderTraversal(root));
         //System.out.println(btt.inorderTraversal(root));
+
+        btt.inOrder(root);
+        //btt.preOrder(root);
+        //btt.postOrder(root);
+        System.out.println(output);
+        //[4, 2, 5, 1, 3, 6]
+        //[1, 2, 4, 5, 3, 6]
+        //[4, 5, 2, 6, 3, 1]
     }
 
 }

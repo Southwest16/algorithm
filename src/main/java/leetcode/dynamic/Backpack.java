@@ -7,20 +7,22 @@ public class Backpack {
     private int result = Integer.MIN_VALUE; //结果放到 result 中
 
 
-    //回溯算法, 时间复杂度O(2的n次方)
-    public void backTrack(int i, int currWeight) {
-        //currWeight==w 表示装满了，i==n 表示物品都考察完了
-        if (currWeight == maxWeight || i == n) {
-            if (currWeight > result) result = currWeight;
-            return;
-        }
-        //选择不装第i个物品
-        backTrack(i + 1, currWeight);
-        //如果背包当前重量加上第i个物品的重量大于maxWeight, 才选择装入第i个物品
-        if (currWeight + weight[i] <= maxWeight) {
-            backTrack(i + 1, currWeight + weight[i]);
-        }
-    }
+//    //回溯算法, 时间复杂度O(2的n次方)
+//    public void backTrack(int i, int currWeight) {
+//        //currWeight==maxWeight 表示装满了，i==n 表示物品都考察完了
+//        if (currWeight == maxWeight || i == n) {
+//            if (currWeight > result) result = currWeight;
+//            return;
+//        }
+//
+//        //选择不装第i个物品
+//        backTrack(i + 1, currWeight);
+//
+//        //没有超过背包可以承受的重量时, 才选择装入第i个物品
+//        if (currWeight + weight[i] <= maxWeight) {
+//            backTrack(i + 1, currWeight + weight[i]);
+//        }
+//    }
 
     //回溯算法, 避免重复计算
     private boolean[][] mem = new boolean[5][9];
