@@ -1,4 +1,4 @@
-package ds_algo.backtrack;
+package geektime_algorithm.backtrack;
 
 public class FourQueen {
     final int N = 4;

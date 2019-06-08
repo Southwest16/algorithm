@@ -1,4 +1,4 @@
-package ds_algo.backtrack;
+package geektime_algorithm.backtrack;
 
 public class EightQueen {
     int[] result = new int[4];//全局成员变量, 下标表示行, 值表示皇后存储在那一列

@@ -1,4 +1,4 @@
-package ds_algo.heap;
+package geektime_algorithm.heap;
 
 public class Heap {
     private int[] a; //存放堆元素的数组, 从下标1开始存储数据

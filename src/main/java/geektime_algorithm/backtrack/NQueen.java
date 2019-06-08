@@ -1,4 +1,4 @@
-package ds_algo.backtrack;
+package geektime_algorithm.backtrack;
 
 import java.util.ArrayList;
 import java.util.Arrays;

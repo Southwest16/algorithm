@@ -1,4 +1,4 @@
-package ds_algo.backtrack;
+package geektime_algorithm.backtrack;
 
 public class BackPack {
     int[] weight = {10, 5, 12, 22, 50};
