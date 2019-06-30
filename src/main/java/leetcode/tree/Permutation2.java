@@ -19,9 +19,8 @@ public class Permutation2 {
      */
     private void permute(int[] data, int l, int r) {
         if (l == r){
-            for (int i = 0; i < data.length; i++) {
+            for (int i = 0; i < data.length; i++)
                 System.out.print(data[i] + " ");
-            }
             System.out.println();
         } else {
             for (int i = l; i <= r; i++) {
@@ -37,5 +36,4 @@ public class Permutation2 {
         data[i] = data[j];
         data[j] = temp;
     }
-
 }
