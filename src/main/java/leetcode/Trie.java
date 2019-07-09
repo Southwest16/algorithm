@@ -1,4 +1,4 @@
-package geektime_algorithm.trie;
+package leetcode;
 
 public class Trie {
     private TrieNode root = new TrieNode('/');

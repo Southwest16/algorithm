@@ -1,4 +1,4 @@
-package geektime_algorithm.backtrack;
+package leetcode.backtrack;
 
 public class FourQueen {
     final int N = 4;

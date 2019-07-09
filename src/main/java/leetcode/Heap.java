@@ -1,4 +1,4 @@
-package geektime_algorithm.heap;
+package leetcode;
 
 public class Heap {
     private int[] a; //存放堆元素的数组, 从下标1开始存储数据

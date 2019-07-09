@@ -1,4 +1,4 @@
-package leetcode.dynamic;
+package leetcode.dp;
 
 
 import static java.lang.Math.*;

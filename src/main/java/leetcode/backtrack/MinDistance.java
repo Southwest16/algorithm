@@ -1,4 +1,4 @@
-package geektime_algorithm.dynamic;
+package leetcode.backtrack;
 
 /**
  * 求矩阵从左上角到右下角的最短距离

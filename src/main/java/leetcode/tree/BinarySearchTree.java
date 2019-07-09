@@ -1,4 +1,4 @@
-package geektime_algorithm.tree;
+package leetcode.tree;
 
 //二叉查找树
 public class BinarySearchTree {

@@ -1,4 +1,4 @@
-package leetcode.dynamic;
+package leetcode.dp;
 
 /**
  * https://leetcode.com/problems/min-cost-climbing-stairs/

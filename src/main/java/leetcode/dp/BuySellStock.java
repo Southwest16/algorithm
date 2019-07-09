@@ -1,4 +1,4 @@
-package leetcode.dynamic;
+package leetcode.dp;
 
 /**
  * Buy and sell stock

@@ -1,4 +1,4 @@
-package geektime_algorithm.backtrack;
+package leetcode.backtrack;
 
 public class BackPack {
     int[] weight = {10, 5, 12, 22, 50};

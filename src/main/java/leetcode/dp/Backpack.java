@@ -1,4 +1,4 @@
-package leetcode.dynamic;
+package leetcode.dp;
 
 public class Backpack {
     private int[] weight = {2, 2, 4, 6, 3};  //物品重量

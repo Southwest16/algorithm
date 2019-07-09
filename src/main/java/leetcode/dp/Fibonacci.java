@@ -1,4 +1,4 @@
-package leetcode.dynamic;
+package leetcode.dp;
 
 /**
  * https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/
