@@ -2,12 +2,16 @@ package leetcode.queuestack;
 
 import java.util.Stack;
 
-public class MyQueue {
+/**
+ * 使用栈实现队列
+ * https://leetcode.com/problems/implement-stack-using-queues/
+ */
+public class ImplementQueueUsingStack {
     private int front;
     private Stack<Integer> s1 = new Stack<>();
     private Stack<Integer> s2 = new Stack<>();
 
-    public MyQueue() {
+    public ImplementQueueUsingStack() {
 
     }
 

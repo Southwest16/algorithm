@@ -3,7 +3,11 @@ package leetcode.queuestack;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class MyStack {
+/**
+ * 使用队列实现栈
+ * https://leetcode.com/problems/implement-queue-using-stacks/
+ */
+public class ImplementStackUsingQueue {
     private Queue<Integer> q1 = new LinkedList<>();//q1存放栈元素
     private Queue<Integer> q2 = new LinkedList<>();//q2保持为空
     private int top;    //栈顶元素

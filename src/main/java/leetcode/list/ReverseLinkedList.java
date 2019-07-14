@@ -1,10 +1,13 @@
 package leetcode.list;
 
+import java.util.LinkedList;
+
 /**
  * 反转一个单链表
- * https://leetcode.com/problems/reverse-linked-list/solution/
+ * https://leetcode.com/problems/reverse-linked-list
  */
 public class ReverseLinkedList {
+
     public static ListNode reverseLinkedList(ListNode head) {
         if(head == null) return head;
 

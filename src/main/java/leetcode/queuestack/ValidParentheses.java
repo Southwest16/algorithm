@@ -4,10 +4,14 @@ import java.util.HashMap;
 import java.util.Stack;
 
 /**
- *
+ *  判断括号字符串是否有效
  * https://leetcode.com/problems/valid-parentheses/
  */
 public class ValidParentheses {
+    public static void main(String[] args) {
+        System.out.println(isValidParentheses2("[{[)}]"));
+    }
+
     //方法一
     public static boolean isValidParentheses2(String s) {
         Stack<Character> stack = new Stack<>();
