@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class _1_TwoSum {
     public static void main(String[] args) {
-        int[] nums = {2};
+        int[] nums = {2, 7, 11, 15};
         int target = 9;
 
         int[] result = twoSum(nums, target);
@@ -26,7 +26,7 @@ public class _1_TwoSum {
         for (int i = 0; i < n; i++) {
             if (hashMap.getOrDefault(target-nums[i], -1) != i &&
                     hashMap.containsKey(target-nums[i])) {
-                return new int[]{nums[i], target-nums[i]};
+                return new int[]{i, hashMap.get(target-nums[i])};
             }
         }
         return new int[0];
