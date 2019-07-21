@@ -3,7 +3,7 @@ package learn.dp;
 import java.util.Arrays;
 
 /**
- * 零钱兑换
+ * 零钱兑换(类似爬楼梯)
  * https://leetcode.com/problems/coin-change
  */
 public class CoinChange {
@@ -26,10 +26,9 @@ public class CoinChange {
                     dp[i] = Math.min(dp[i], dp[i - coins[j]] + 1);
                 }
             }
-
         }
         // 如果dp数组中存在没有赋值成功的元素,
-        // 就表明不存在这样的零钱组合, 使得等于amount
+        // 就表明不存在这样的零钱组合
         return dp[amount] > amount ? -1 : dp[amount];
     }
 }
