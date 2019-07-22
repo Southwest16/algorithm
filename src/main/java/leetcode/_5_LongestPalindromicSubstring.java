@@ -19,12 +19,12 @@ public class _5_LongestPalindromicSubstring {
 
         String result = "";
         for (int i = 0; i < s.length(); i++) {
-            String s1 = expandAroundCenter(s, i, i); //s长度为奇数
+            String s1 = expandAroundCenter(s, i, i); //s中长度为奇数的回文字符串
             //System.out.println("奇数 ——> "+s1);
             if(s1.length() > result.length())
                 result = s1;
 
-            String s2 = expandAroundCenter(s, i, i + 1); //s长度为偶数
+            String s2 = expandAroundCenter(s, i, i + 1); //s中长度为偶数的回文字符串
             System.out.println("偶数 ——> "+s2);
             if(s2.length() > result.length())
                 result = s2;
@@ -32,13 +32,18 @@ public class _5_LongestPalindromicSubstring {
         return result;
     }
 
+    //判断是否是回文字符串
     private static String expandAroundCenter(String s, int left, int right) {
         int l = left, r = right;
+        //从回文字符串的中间向两边扩散;
+        //如果是奇数回文, 例如"a", 再判断"a"字符串的左右两个字符是否相同, 依次往外扩散;
+        //如果是偶数回文, 例如"aa", 再判断左边"a"的左边的字符和右边"a"的右边的字符是否相同, 依次往外扩散;
         while (l >= 0 && r < s.length() && s.charAt(l) == s.charAt(r)) {
             l--;
             r++;
         }
-        return s.substring(l+1, r); //包括左界, 不包括右界
+
+        return s.substring(l+1, r); //截取回文字符串(包括左界, 不包括右界)。
     }
 
 
