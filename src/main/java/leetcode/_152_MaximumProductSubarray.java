@@ -19,12 +19,12 @@ public class _152_MaximumProductSubarray {
         int curMin = nums[0];
 
         for (int i = 1; i < nums.length; i++) {
-            int curMaxTmp = curMax * nums[i];
-            int curMinTmp = curMin * nums[i];
-            curMax = Math.max(Math.max(curMaxTmp, curMinTmp), nums[i]);
-            curMin = Math.min(Math.min(curMaxTmp, curMinTmp), nums[i]);
+            int curMaxTmp = curMax * nums[i]; //走到第i个元素时的最大值(也可能是最小值)
+            int curMinTmp = curMin * nums[i]; //走到第i个元素时的最小值(也可能是最大值)
+            curMax = Math.max(Math.max(curMaxTmp, curMinTmp), nums[i]); //获取第i个元素时的最大值
+            curMin = Math.min(Math.min(curMaxTmp, curMinTmp), nums[i]); //获取第i个元素时的最小值
 
-            if(curMax > result) result = curMax;
+            if(curMax > result) result = curMax; //更新结果
         }
         return result;
     }

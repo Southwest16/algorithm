@@ -11,50 +11,44 @@ public class _5_LongestPalindromicSubstring {
         int n = s.length();
         System.out.println(lps(s.toCharArray(), 0, n - 1));*/
 
+        System.out.println(lps("baabaa"));
+    }
 
-        System.out.println(lps("babad"));
+    public static String lps(String s) {
+        if (s == null || s.length() < 1) return "";
+
+        String result = "";
+        for (int i = 0; i < s.length(); i++) {
+            String s1 = expandAroundCenter(s, i, i); //s长度为奇数
+            //System.out.println("奇数 ——> "+s1);
+            if(s1.length() > result.length())
+                result = s1;
+
+            String s2 = expandAroundCenter(s, i, i + 1); //s长度为偶数
+            System.out.println("偶数 ——> "+s2);
+            if(s2.length() > result.length())
+                result = s2;
+        }
+        return result;
+    }
+
+    private static String expandAroundCenter(String s, int left, int right) {
+        int l = left, r = right;
+        while (l >= 0 && r < s.length() && s.charAt(l) == s.charAt(r)) {
+            l--;
+            r++;
+        }
+        return s.substring(l+1, r); //包括左界, 不包括右界
     }
 
 
-//    public static String lps(String s) {
-//        if (s == null || s.length() < 1) return "";
-//
-//        int start = 0, end = 0;
-//        for (int i = 0; i < s.length(); i++) {
-//            int len1 = expandAroundCenter(s, i, i);
-//            int len2 = expandAroundCenter(s, i, i + 1);
-//            int len = Math.max(len1, len2);
-//            if (len > end - start) {
-//                start = i - (len - 1) / 2;
-//                end = i + len / 2;
-//            }
-//        }
-//        return s.substring(start, end + 1);
-//    }
-//
-//    private static int expandAroundCenter(String s, int left, int right) {
-//        int L = left, R = right;
-//        while (L >= 0 && R < s.length() && s.charAt(L) == s.charAt(R)) {
-//            L--;
-//            R++;
-//        }
-//        return R - L - 1;
-//    }
-
-
-    private static int lps(String s) {
+    /*private static int lps(String s) {
         int n = s.length();
         int i, j, cl;
         int L[][] = new int[n][n];
 
         for (i = 0; i < n; i++)
             L[i][i] = 1;
-        for (int k = 0; k < n; k++) {
-            for (int l = 0; l < n; l++) {
-                System.out.print(L[k][l] + "  ");
-            }
-            System.out.println();
-        }
 
         for (cl = 2; cl <= n; cl++) {
             for (i = 0; i < n - cl + 1; i++) {
@@ -67,11 +61,8 @@ public class _5_LongestPalindromicSubstring {
                     L[i][j] = Math.max(L[i][j - 1], L[i + 1][j]);
             }
         }
-
-
-
         return L[0][n - 1];
-    }
+    }*/
 
 
     /*// 方法一：递归。时间复杂度O(n3), 空间复杂度O(1)
