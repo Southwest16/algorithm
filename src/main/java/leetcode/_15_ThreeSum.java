@@ -29,7 +29,6 @@ public class _15_ThreeSum {
 
         for (int i = 0; i < n - 2; i++) {
             if (i == 0 || (i > 0 && nums[i] != nums[i-1])) { //为了解决某些特殊的用例
-            //if (nums[i] != nums[i+1]) {
                 int left = i + 1;
                 int right = n - 1;
                 int sum = -nums[i];
