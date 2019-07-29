@@ -1,88 +1,96 @@
 package leetcode;
 
 /**
+<<<<<<< HEAD
  * 最小路径和
+=======
+ * 矩阵最小路径和
+>>>>>>> 0acc98ca3d2b2a64b5a2c82f2fbb8682a578b93f
  * https://leetcode.com/problems/minimum-path-sum/
  */
 public class _64_MinimumPathSum {
     public static void main(String[] args) {
         int[][] grid = {
-            {1,3,5,9},
-            {2,1,3,4},
-            {5,2,6,7},
-            {6,8,4,3}};
+            {1, 3, 1},
+            {1, 5, 1},
+            {4, 2, 1}};
+
         System.out.println(minPathSum(grid));
-        System.out.println(minPathSum2(grid, grid.length-1, grid[0].length-1));
-        /*for (int i = 0; i < mem.length; i++) {
-            for (int j = 0; j < mem[0].length; j++) {
-                System.out.print(mem[i][j] + "  ");
-            }
-            System.out.println();
-        }*/
     }
 
-    //方法一：左上角推到右下角
+    //时间复杂度O(n²), 空间复杂度O(1)
     public static int minPathSum(int[][] grid) {
-        if(grid == null || grid.length == 0) return 0;
+        if(grid == null || grid.length < 1) return 0;
 
-        int row = grid.length; //行数
-        int col = grid[0].length; //列数
-        int[][] result = new int[row][col]; //存放每一个位置的最小路径
+        int row = grid.length;
+        int col = grid[0].length;
+        for (int i = 1; i < col; i++) {
+            grid[0][i] += grid[0][i-1];
+        }
+
+        for (int i = 1; i < row; i++) {
+            grid[i][0] += grid[i-1][0];
+        }
+
+        for (int i = 1; i < row; i++) {
+            for (int j = 1; j < col; j++) {
+                grid[i][j] += Math.min(grid[i-1][j], grid[i][j-1]);
+            }
+        }
+
+        return grid[row-1][col-1];
+    }
+
+    //状态转移表法, 从左上角到右下角.
+    //时间复杂度O(n²), 空间复杂度O(n²)
+    public int minPathSum2(int[][] grid, int n) {
+        int[][] state = new int[n][n];
         int sum = 0;
-
-        //填充第一行
-        for (int c = 0; c < col; c++) {
-            sum += grid[0][c];
-            result[0][c] = sum;
+        for (int col = 0; col < n; col++) {
+            sum += grid[0][col];
+            state[0][col] = sum;
         }
 
         sum = 0;
-        //填充第一列
-        for (int r = 0; r < row; r++) {
-            sum += grid[r][0];
-            result[r][0] = sum;
+        for (int row = 0; row < n; row++) {
+            sum += grid[row][0];
+            state[row][0] = sum;
         }
 
-        //动态规划。填满剩下的所有位置
-        for (int i = 1; i < row; i++) {
-            for (int j = 1; j < col; j++) {
-                result[i][j] = grid[i][j] + Math.min(result[i-1][j], result[i][j-1]);
+        for (int row = 1; row < n; row++) {
+            for (int col = 1; col < n; col++) {
+                state[row][col] =
+                        grid[row][col] + Math.min(state[row-1][col], state[row][col-1]);
             }
         }
-
-        /*for (int i = 0; i < row; i++) {
-            for (int j = 0; j < col; j++) {
-                System.out.print(result[i][j] + " ");
-            }
-            System.out.println();
-        }*/
-
-        return result[row-1][col-1]; //返回矩阵的右下角元素即为所求结果
+        return state[n-1][n-1];
     }
 
-
-    //方法二：右下角推到左上角
-    private static int[][] mem = new int[4][4]; //避免重复计算
-    public static int minPathSum2(int[][] grid, int row, int col) {
-        if (row == 0 && col == 0) return grid[0][0]; //到达左上角
-
-        if (mem[row][col] > 0) return mem[row][col]; //避免重复计算
+    //状态转移方程(递归 + 记忆),从右下角倒推到左上角
+    //时间复杂度O(n²), 空间复杂度O(n²)
+    private int[][] mem = new int[4][4]; //避免重复计算
+    public int minPathSum3(int[][] grid, int i, int j) {
+        //到达左上角
+        if (i == 0 && j == 0) return grid[0][0];
+        //避免重复计算
+        if (mem[i][j] > 0) return mem[i][j];
 
         //当前位置的左边元素
         int minLeft = Integer.MAX_VALUE;
-        if (col >= 1)
-            minLeft = minPathSum2(grid, row, col-1);
+        if (j-1 >= 0) {
+            minLeft = minPathSum3(grid, i, j-1);
+        }
 
         //当前位置的上面元素
         int minUp = Integer.MAX_VALUE;
-        if (row >= 1)
-            minUp = minPathSum2(grid, row-1, col);
+        if (i-1 >= 0) {
+            minUp = minPathSum3(grid, i-1, j);
+        }
 
         //当前位置的最小路径
-        int currMin = grid[row][col] + Math.min(minLeft, minUp);
-
+        int currMin = grid[i][j] + Math.min(minLeft, minUp);
         //计算过保存起来, 避免重复计算
-        mem[row][col] = currMin;
+        mem[i][j] = currMin;
 
         return currMin;
     }

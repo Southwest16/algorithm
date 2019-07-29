@@ -14,11 +14,9 @@ public class Sqrt {
         double sqrt = 0.0;
         double epsil = 0.000001;
 
-        int sum = 0;
         while (start <= end) {
-            double mid = (start + end) / 2;
+            double mid = start + (end - start) / 2;
             sqrt = mid;
-            System.out.println(sum);
             if (Math.abs(mid * mid - value) <= epsil) {
                 return mid;
             } else if (mid * mid < value) {
@@ -26,7 +24,6 @@ public class Sqrt {
             } else {
                 end = mid;
             }
-            sum += 1;
         }
 
         return sqrt;
