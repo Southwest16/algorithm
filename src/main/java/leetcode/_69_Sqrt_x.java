@@ -10,27 +10,8 @@ public class _69_Sqrt_x {
         System.out.println(1 << 4);
     }
 
-    //位运算
+    //二分查找法
     public static int mySqrt(int x) {
-        if (x == 0) return 0;
-
-        int h = 0;
-        // x << n 等于 x * 2ⁿ
-        while ((long) (1 << h) * (long) (1 << h) <= x)
-            h++;
-        h--;
-
-        int b = h - 1;
-        int result = (1 << h);
-        while (b >= 0) {
-            if ((long) (result | (1 << b)) * (long) (result | (1 << b)) <= x)
-                result |= (1 << b);
-            b--;
-        }
-        return result;
-    }
-
-    public static int mySqrt2(int x) {
         if (x == 0) return 0;
 
         int left = 1; //左界
@@ -47,5 +28,25 @@ public class _69_Sqrt_x {
                 left = mid + 1; //到右半边查找
             }
         }
+    }
+
+    //位运算法
+    public static int mySqrt2(int x) {
+        if (x == 0) return 0;
+
+        int h = 0;
+        // x << n 等于 x * 2ⁿ
+        while ((long) (1 << h) * (long) (1 << h) <= x)
+            h++;
+        h--;
+
+        int b = h - 1;
+        int result = (1 << h);
+        while (b >= 0) {
+            if ((long) (result | (1 << b)) * (long) (result | (1 << b)) <= x)
+                result |= (1 << b);
+            b--;
+        }
+        return result;
     }
 }
