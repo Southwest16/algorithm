@@ -22,13 +22,17 @@ public class _15_ThreeSum {
         }
     }
 
+    //遍历第一个数
+    //第二个数在第一个数后面往右开始遍历
+    //第三个数从数组尾部向左遍历
     public static List<List<Integer>> threeSum2(int[] nums) {
-        Arrays.sort(nums); // {-4, -1, -1, 0, 1, 2}
-        List<List<Integer>> list = new ArrayList<>();
-        int n = nums.length;
+        List<List<Integer>> list = new ArrayList<>(); //保存结果
+
+        Arrays.sort(nums); //排序nums数组
+        int n = nums.length; //数组长度
 
         for (int i = 0; i < n - 2; i++) {
-            if (i == 0 || (i > 0 && nums[i] != nums[i-1])) { //为了解决某些特殊的用例
+            if (i == 0 || (i > 0 && nums[i-1] != nums[i])) { //为了解决某些特殊的用例
                 int left = i + 1;
                 int right = n - 1;
                 int sum = -nums[i];
@@ -36,6 +40,7 @@ public class _15_ThreeSum {
                 while (left < right) {
                     if (nums[left] + nums[right] == sum) {
                         list.add(Arrays.asList(nums[i], nums[left], nums[right]));
+                        //相邻两个元素相等时，就不再判断
                         while (left < right && nums[left] == nums[left+1]) left++;
                         while (left < right && nums[right] == nums[right-1]) right--;
                         left++;
