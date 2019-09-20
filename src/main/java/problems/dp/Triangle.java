@@ -36,7 +36,7 @@ public class Triangle {
         for (int i = triangle.size() - 2; i >= 0 ; i--) {
             //在每一行中从左向右每列遍历
             for (int j = 0; j < triangle.get(i).size(); j++) {
-                //当前位置的值，加上它左下和右下中的较小者
+                //当前位置的值，加上它左下和右下的较小者
                 mini.set(j, triangle.get(i).get(j) + Math.min(mini.get(j), mini.get(j+1)));
             }
         }

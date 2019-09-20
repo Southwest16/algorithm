@@ -38,8 +38,9 @@ public class ClimbingStairs {
     //斐波那契通项公式. 时间复杂度O(logn), 空间复杂度O(1)
     public int climbStairs06(int n) {
         double sqrt = Math.sqrt(5);
-        double fibn = Math.pow((1 + sqrt) / 2, n + 1) - Math.pow((1 - sqrt) / 2, n + 1);
-        return (int) (fibn / sqrt);
+        double fibn = 1 / sqrt *
+                (Math.pow((1 + sqrt) / 2, n + 1) - Math.pow((1 - sqrt) / 2, n + 1));
+        return (int)fibn;
     }
 
     /** Dynamic Programming */

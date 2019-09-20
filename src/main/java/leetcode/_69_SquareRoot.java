@@ -1,13 +1,37 @@
 package leetcode;
 
+import java.text.DecimalFormat;
+
 /**
  * 求x的平方根
  * https://leetcode.com/problems/sqrtx/
  */
-public class _69_Sqrt_x {
+public class _69_SquareRoot {
     public static void main(String[] args) {
-        System.out.println(mySqrt(16));
-        System.out.println(1 << 4);
+//        System.out.println(mySqrt(15));
+        DecimalFormat df = new DecimalFormat("#.000000");
+        System.out.println(df.format(squareRoot(26, 0.0001)));
+    }
+
+    public static double squareRoot(int n, double deltaThreshold) {
+        double start = 0.0;
+        double end = n;
+
+        while (start <= end) {
+            double mid = start + (end - start) / 2;
+            double delta = Math.abs(mid * mid - n);
+            if (delta <= deltaThreshold) {
+                return mid;
+            } else {
+                if (mid * mid < n) {
+                    start = mid;
+                } else {
+                    end = mid;
+                }
+            }
+        }
+
+        return -1.0;
     }
 
     //二分查找法
