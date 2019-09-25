@@ -35,8 +35,7 @@ public class Main {
         System.out.println(RemoveNthFromEnd.removeNthFromEnd(n1, 5).val);*/
 
 
-        /*//查找中间节点
-        System.out.println(MiddleNode.findMiddleNode(n1).val);*/
+
 
 
         /*//检测链表是否有环
