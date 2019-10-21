@@ -2,7 +2,7 @@ package problems;
 
 /**
  * 被围绕的区域
- * 思路：先将矩阵边上及其相邻元素是"O"替换为某个字符(例如"#"),
+ * 思路：先将矩阵边上及其相邻元素是"O"的替换为某个字符(例如"#"),
  * 之后再替换回来, 其余的元素全部赋值为"X"
  * https://leetcode.com/problems/surrounded-regions/
  */

@@ -14,7 +14,8 @@ public class ImplementStackUsingQueue {
 
     public void push(int x) {
         q2.add(x);
-        top = x;    //每次向栈中添加元素，都要把被添加元素赋值给变量top，作为栈顶元素
+        top = x; //每次向栈中添加元素，都要把被添加元素赋值给变量top，作为栈顶元素
+
         //将q1中的元素依次添加到q2中(也就是将q1中元素按按入队顺序倒序)
         while (!q1.isEmpty()) {
             q2.add(q1.remove());

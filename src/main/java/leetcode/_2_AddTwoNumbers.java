@@ -40,12 +40,14 @@ public class _2_AddTwoNumbers {
             curr.next = new ListNode(carry);
         return head.next;
     }
+
+
+    //Definition for singly-linked list.
+    public static class ListNode {
+        int val;
+        ListNode next;
+        ListNode(int x) { val = x; }
+    }
 }
 
 
-//Definition for singly-linked list.
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode(int x) { val = x; }
-}

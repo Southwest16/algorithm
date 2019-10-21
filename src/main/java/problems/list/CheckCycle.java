@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * https://leetcode.com/problems/linked-list-cycle/
  * 检测链表中是否有环
  */
 public class CheckCycle {
@@ -12,8 +13,9 @@ public class CheckCycle {
     public static boolean hasCycle2(ListNode head) {
         if (head == null || head.next == null) return false;
 
-        ListNode slow = head;
-        ListNode fast = head.next;
+        ListNode slow = head; //慢指针
+        ListNode fast = head.next; //快指针
+        //判断慢指针是否与快指针相等
         while (slow != fast) {
             if (fast == null || fast.next == null) return false;
 

@@ -15,18 +15,18 @@ public class ImplementQueueUsingStack {
 
     }
 
-    /** Push element x to the back of queue */
+    //添加一个元素
     public void push(int x) {
         s1.push(x);
     }
 
-    /** Removes the element from in front of queue and returns it. */
+    //移除队首元素
     public int pop() {
         peek();
         return s2.pop();
     }
 
-    /** Get the front element */
+    //获取队首元素, 但不移除
     public int peek() {
         if (s2.empty()) {
             while (!s1.empty()) {
@@ -36,7 +36,7 @@ public class ImplementQueueUsingStack {
         return s2.peek();
     }
 
-    /** Returns whether the queue is empty */
+    //判断队列是否为空
     public boolean empty() {
         return s1.empty() && s2.empty();
     }
