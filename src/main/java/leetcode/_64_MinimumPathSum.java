@@ -59,8 +59,7 @@ public class _64_MinimumPathSum {
 
         for (int row = 1; row < n; row++) {
             for (int col = 1; col < n; col++) {
-                state[row][col] =
-                        grid[row][col] + Math.min(state[row-1][col], state[row][col-1]);
+                state[row][col] = grid[row][col] + Math.min(state[row-1][col], state[row][col-1]);
             }
         }
         return state[n-1][n-1];
