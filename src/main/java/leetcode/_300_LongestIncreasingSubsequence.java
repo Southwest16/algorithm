@@ -46,8 +46,8 @@ public class _300_LongestIncreasingSubsequence {
         if(nums == null || nums.length == 0) return 0;
         int n = nums.length;
 
-        int result = 1; //最短也有1, 所以初始化为1, 而不是0
         int[] dp = new int[n];
+        int result = 1; //最短也有1, 所以初始化为1, 而不是0
         for (int i = 0; i < n; i++) {
             dp[i] = 1;
         }
