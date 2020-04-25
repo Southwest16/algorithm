@@ -1,4 +1,4 @@
-package problems.sort;
+package algo_ds.sort;
 
 /**
  * 快速排序(数组A[l...r])
@@ -19,7 +19,7 @@ public class QuickSort {
 
     //分区函数
     private static int partition(int[] arr, int left, int right) {
-        int pivot = arr[right];
+        int pivot = arr[right]; //选取最后一个元素作为轴
         int i = left;
         for (int j = left; j < right; j++) {
             if (arr[j] < pivot) {
