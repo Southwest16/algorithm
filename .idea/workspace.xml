@@ -223,8 +223,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="width" value="977" />
+    <option name="x" value="-9" />
+    <option name="width" value="978" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -306,7 +306,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588599129349" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588600004479" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../flink" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -338,26 +338,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application._450_DeleteNodeIInBST">
+  <component name="RunManager" selected="Application._239_SlidingWindowMaximum">
     <configuration name="QuickSort (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="practice.QuickSort" />
       <module name="algorithm" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="practice.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="QuickSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="algo_ds.sort.QuickSort" />
-      <module name="algorithm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="algo_ds.sort.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -391,6 +378,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="_239_SlidingWindowMaximum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.queue._239_SlidingWindowMaximum" />
+      <module name="algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="leetcode.queue.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="_450_DeleteNodeIInBST" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="leetcode.tree._450_DeleteNodeIInBST" />
       <module name="algorithm" />
@@ -406,11 +406,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application._239_SlidingWindowMaximum" />
         <item itemvalue="Application._450_DeleteNodeIInBST" />
         <item itemvalue="Application.QuickSort (1)" />
         <item itemvalue="Application._111_MinimumDepthOfBinaryTree" />
         <item itemvalue="Application._104_MaximumDepthOfBinaryTree" />
-        <item itemvalue="Application.QuickSort" />
       </list>
     </recent_temporary>
   </component>
