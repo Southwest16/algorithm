@@ -19,12 +19,12 @@ public class _703_KthLargestElementInAStream {
 			add(num); //调用自定义的add方法
 	}
 
-	public int add(int val) {
+	public int add(int data) {
 		if (queue.size() < k) { //如果堆中元素小于k个,就向堆中添加元素
-			queue.add(val);
-		} else if (val > queue.peek()) { //如果新添加元素大于堆顶元素, 就替换
-			queue.poll();
-			queue.add(val);
+			queue.add(data);
+		} else if (data > queue.peek()) { //如果新添加元素大于堆顶元素, 就替换
+			queue.poll(); //移除堆顶元素
+			queue.add(data);
 		}
 		return queue.peek(); //返回堆顶元素, 也就是第K大元素
 	}

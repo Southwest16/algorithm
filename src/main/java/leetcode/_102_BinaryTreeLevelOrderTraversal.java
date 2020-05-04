@@ -1,6 +1,6 @@
 package leetcode;
 
-		import java.util.ArrayList;
+import java.util.ArrayList;
 		import java.util.Deque;
 		import java.util.LinkedList;
 		import java.util.List;
@@ -29,7 +29,7 @@ public class _102_BinaryTreeLevelOrderTraversal {
 	}
 
 	/**
-	 * 广度优先搜索
+	 * 广度优先搜索(借助队列)
 	 * @param root
 	 * @return
 	 */
@@ -49,8 +49,9 @@ public class _102_BinaryTreeLevelOrderTraversal {
 
 			int levelSize = queue.size(); //二叉树每层的结点个数
 			for (int i = 0; i < levelSize; i++) { //遍历当前层的结点, 同时把下一层所有结点添加到队列queue中
-				TreeNode curr = queue.poll(); //获取并移除队列头元素
-				currLevel.add(curr.val);
+				TreeNode curr = queue.poll(); //循环移除上一层所有元素
+				currLevel.add(curr.val); //将移除元素依次添加到指定列表中
+
 				if (curr.left != null) queue.add(curr.left); //添加当前层结点的左节点到队列queue中
 				if (curr.right != null) queue.add(curr.right); //添加当前层结点的右节点到队列queue中
 			}
@@ -62,7 +63,7 @@ public class _102_BinaryTreeLevelOrderTraversal {
 
 
 	/**
-	 * 深度优先搜索
+	 * 深度优先搜索(递归)
 	 * @param root
 	 * @return
 	 */
@@ -74,7 +75,6 @@ public class _102_BinaryTreeLevelOrderTraversal {
 
 		return result;
 	}
-
 	public void dfs(List<List<Integer>> result, TreeNode node, int level) {
 		if (node == null) return;
 
