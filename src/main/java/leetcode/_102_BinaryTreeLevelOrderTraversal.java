@@ -14,11 +14,10 @@ public class _102_BinaryTreeLevelOrderTraversal {
 		TreeNode root = new TreeNode(3);
 		root.left = new TreeNode(9);
 		root.right = new TreeNode(20);
-		root.right.left = new TreeNode(15);
-		root.right.right = new TreeNode(7);
+		root.left.left = new TreeNode(15);
+		root.left.right = new TreeNode(7);
 
-		_102_BinaryTreeLevelOrderTraversal level = new _102_BinaryTreeLevelOrderTraversal();
-		List<List<Integer>> result = level.levelOrder(root);
+		List<List<Integer>> result = levelOrder(root);
 		System.out.println(result.size());
 		for (int i = 0; i < result.size(); i++) {
 			for (int j = 0; j < result.get(i).size(); j++) {
@@ -40,7 +39,7 @@ public class _102_BinaryTreeLevelOrderTraversal {
 
 		//存放每层结点的队列
 		Deque<TreeNode> queue = new LinkedList<>();
-		//将根结点先添加到队列中
+		//先将根结点添加到队列中
 		queue.add(root);
 
 		//遍历队列中的元素
@@ -49,11 +48,12 @@ public class _102_BinaryTreeLevelOrderTraversal {
 
 			int levelSize = queue.size(); //二叉树每层的结点个数
 			for (int i = 0; i < levelSize; i++) { //遍历当前层的结点, 同时把下一层所有结点添加到队列queue中
-				TreeNode curr = queue.poll(); //循环移除上一层所有元素
-				currLevel.add(curr.val); //将移除元素依次添加到指定列表中
+				TreeNode curr = queue.poll(); //获取并移除队头元素
+				currLevel.add(curr.val); //将移除元素的值添加到列表中
 
-				if (curr.left != null) queue.add(curr.left); //添加当前层结点的左节点到队列queue中
-				if (curr.right != null) queue.add(curr.right); //添加当前层结点的右节点到队列queue中
+				//由于队列是先进先出, 所以是先添加左子节点, 后添加右子节点
+				if (curr.left != null) queue.add(curr.left); //添加当前结点的左子节点
+				if (curr.right != null) queue.add(curr.right); //添加当前结点的右子节点
 			}
 
 			result.add(currLevel); //每遍历完一层, 就把当前层结点值集合添加到result中
@@ -67,7 +67,7 @@ public class _102_BinaryTreeLevelOrderTraversal {
 	 * @param root
 	 * @return
 	 */
-	public List<List<Integer>> levelOrder(TreeNode root) {
+	public static List<List<Integer>> levelOrder(TreeNode root) {
 		if (root == null) return new ArrayList<>();
 		List<List<Integer>> result = new ArrayList<>();
 
@@ -75,7 +75,7 @@ public class _102_BinaryTreeLevelOrderTraversal {
 
 		return result;
 	}
-	public void dfs(List<List<Integer>> result, TreeNode node, int level) {
+	public static void dfs(List<List<Integer>> result, TreeNode node, int level) {
 		if (node == null) return;
 
 		//给result添加ArrayList, 目的是为了存放每层节点的值
