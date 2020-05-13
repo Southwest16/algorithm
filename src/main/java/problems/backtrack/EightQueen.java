@@ -9,23 +9,13 @@ public class EightQueen {
             return;
         }
 
-//        System.out.println(row);
-//        System.out.println(0 +" "+ 1 +" "+ 2 +" "+ 3);
-//        System.out.println(result[0] +" "+ result[1] +" "+ result[2] +" "+ result[3]);
-//        System.out.println();
-
         //每行都有8种放法
         for (int column = 0; column < 4; column++) {
             //判断是否满足要求
             if (isOK(row, column)) {
                 //第row行的皇后放到了第column列
                 result[row] = column;
-
-                System.out.println(row +" "+ column);
-                System.out.println(0 +" "+ 1 +" "+ 2 +" "+ 3);
-                System.out.println(result[0] +" "+ result[1] +" "+ result[2] +" "+ result[3]);
-                System.out.println();
-
+                
                 //放置下一行
                 cal(row+1);
             }
