@@ -1,4 +1,4 @@
-package problems.dp;
+package algo_ds.dp;
 
 public class Backpack {
 	private int[] weight = {2, 3, 5, 5, 3};  //物品重量
