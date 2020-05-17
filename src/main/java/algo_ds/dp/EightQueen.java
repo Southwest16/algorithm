@@ -1,4 +1,4 @@
-package problems.backtrack;
+package algo_ds.dp;
 
 /**
  * N皇后

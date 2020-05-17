@@ -7,6 +7,13 @@ import java.util.List;
 /**
  * 三角形最小路径和
  * https://leetcode.com/problems/triangle/
+ * [
+ *      [2],
+ *     [3,4],
+ *    [6,5,7],
+ *   [4,1,8,3]
+ * ]
+ * 求上面三角形从顶部到底部的最小路径, (2 + 3 + 5 + 1 = 11)
  */
 public class _120_Triangle {
     public static void main(String[] args) {
