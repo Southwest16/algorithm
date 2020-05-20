@@ -1,4 +1,4 @@
-package algo_ds.tree;
+package algo_ds.graph;
 
 import java.util.LinkedList;
 
