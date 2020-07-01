@@ -1,4 +1,4 @@
-package algo_ds.dp;
+package leetcode.dp;
 
 public class Backpack03 {
 	public static void double11Advance(int[] items, int n, int maxWeight) {

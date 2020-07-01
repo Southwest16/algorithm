@@ -2,12 +2,16 @@ package leetcode.greedy;
 
 import java.util.Stack;
 
+/**
+ * 从一个非负整数中移除k个数, 使得剩下的数最小
+ * https://leetcode.com/problems/remove-k-digits/
+ */
 public class _402_RemoveKDigits {
 	public static void main(String[] args) {
-		System.out.println(removeKdigits("40009", 3));
+		System.out.println(removeKDigits("40009", 3));
 	}
 
-	public static String removeKdigits(String num, int k) {
+	public static String removeKDigits(String num, int k) {
 		int len = num.length();
 
 		if (k == len) return "0";

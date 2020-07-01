@@ -9,12 +9,9 @@ import java.util.Vector;
  */
 public class _300_LongestIncreasingSubsequence {
     public static void main(String[] args) {
-        int[] nums = {10,9,2,5,3,7,101,18};
-        //System.out.println(lengthOfLIS(nums));
-        System.out.println(lengthOfLISBinarySearch(nums));
-
-//        int[] array = {2, 3};
-//        System.out.println(Arrays.binarySearch(array, 0, array.length, 4));
+        int[] nums = {9,2,5,3,7};
+        System.out.println(lengthOfLIS(nums));
+//        System.out.println(lengthOfLISBinarySearch(nums));
     }
 
     //二分查找方法。时间复杂度O(nlogn)。
@@ -46,8 +43,9 @@ public class _300_LongestIncreasingSubsequence {
         if(nums == null || nums.length == 0) return 0;
         int n = nums.length;
 
-        int[] dp = new int[n];
         int result = 1; //最短也有1, 所以初始化为1, 而不是0
+
+        int[] dp = new int[n];
         for (int i = 0; i < n; i++) {
             dp[i] = 1;
         }

@@ -1,4 +1,4 @@
-package algo_ds.dp;
+package leetcode.dp;
 
 /**
  * 最长公共子串长度(表示两个字符串相似程度的大小)

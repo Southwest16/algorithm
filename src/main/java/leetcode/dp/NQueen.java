@@ -1,4 +1,4 @@
-package algo_ds.dp;
+package leetcode.dp;
 
 import java.util.ArrayList;
 import java.util.HashSet;

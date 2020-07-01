@@ -1,4 +1,4 @@
-package algo_ds.dp;
+package leetcode.dp;
 
 /**
  * 0-1背包问题升级版

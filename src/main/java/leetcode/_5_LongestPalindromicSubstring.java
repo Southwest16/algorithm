@@ -11,7 +11,7 @@ public class _5_LongestPalindromicSubstring {
         int n = s.length();
         System.out.println(lps(s.toCharArray(), 0, n - 1));*/
 
-        System.out.println(lps("baabaa"));
+        System.out.println(lps("babbaa"));
     }
 
     public static String lps(String s) {
@@ -19,13 +19,11 @@ public class _5_LongestPalindromicSubstring {
 
         String result = "";
         for (int i = 0; i < s.length(); i++) {
-            String s1 = expandAroundCenter(s, i, i); //s中长度为奇数的回文字符串
-            //System.out.println("奇数 ——> "+s1);
+            String s1 = expandAroundCenter(s, i, i); //字符串中长度为奇数的回文字符串
             if(s1.length() > result.length())
                 result = s1;
 
-            String s2 = expandAroundCenter(s, i, i + 1); //s中长度为偶数的回文字符串
-            System.out.println("偶数 ——> "+s2);
+            String s2 = expandAroundCenter(s, i, i + 1); //字符串中长度为偶数的回文字符串
             if(s2.length() > result.length())
                 result = s2;
         }
@@ -35,7 +33,7 @@ public class _5_LongestPalindromicSubstring {
     //判断是否是回文字符串
     private static String expandAroundCenter(String s, int left, int right) {
         int l = left, r = right;
-        //从回文字符串的中间向两边扩散;
+        //从字符串的中间向两边扩散;
         //如果是奇数回文, 例如"a", 再判断"a"字符串的左右两个字符是否相同, 依次往外扩散;
         //如果是偶数回文, 例如"aa", 再判断左边"a"的左边的字符和右边"a"的右边的字符是否相同, 依次往外扩散;
         while (l >= 0 && r < s.length() && s.charAt(l) == s.charAt(r)) {

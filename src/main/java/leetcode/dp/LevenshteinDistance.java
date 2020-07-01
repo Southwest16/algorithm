@@ -1,4 +1,4 @@
-package algo_ds.dp;
+package leetcode.dp;
 
 /**
  * 莱文斯坦距离(表示两个字符串差异的大小)

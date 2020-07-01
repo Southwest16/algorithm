@@ -1,11 +1,7 @@
 package leetcode;
 
 /**
-<<<<<<< HEAD
- * 最小路径和
-=======
- * 矩阵最小路径和
->>>>>>> 0acc98ca3d2b2a64b5a2c82f2fbb8682a578b93f
+ * 求矩阵最小路径和
  * https://leetcode.com/problems/minimum-path-sum/
  */
 public class _64_MinimumPathSum {
