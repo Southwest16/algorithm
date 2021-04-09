@@ -10,6 +10,7 @@ public class BinarySearch {
 		System.out.println(searchRecursion(a, 5, left, right));
 	}
 
+	//递归方法
 	public static int searchRecursion(int[] a, int n, int left, int right) {
 		if (left > right) return -1;
 
