@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.problems;
 
 /**
  * 查找链表的中间结点

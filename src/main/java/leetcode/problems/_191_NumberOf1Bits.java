@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.problems;
 
 /**
  * https://leetcode.com/problems/number-of-1-bits/

@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.problems;
 
 /**
  * 最小花费爬楼梯

@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.problems;
 
 /**
  * 买卖股票的最佳时机

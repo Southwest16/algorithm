@@ -1,7 +1,5 @@
 package leetcode.problems;
 
-import leetcode.ListNode;
-
 /**
  * 求链表的中间结点
  * https://leetcode.com/problems/middle-of-the-linked-list/

@@ -28,6 +28,10 @@ public class _206_ReverseLinkedList {
 		ListNode currentNode = head;
 		ListNode tmp = null;
 
+		//1. 当前节点的下一个节点赋给临时变量
+		//2. 当前节点的下一个节点置为当前节点的前一个节点
+		//3. prev往前移动一位
+		//4. currentNode往前移动一位
 		while (currentNode != null) {
 			tmp = currentNode.next;
 			currentNode.next = prev;

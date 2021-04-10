@@ -1,9 +1,14 @@
-package problems;
+package leetcode.problems;
 
 /**
  * https://leetcode.com/problems/reverse-words-in-a-string/
  */
-public class ReverseWordsInString {
+public class _151_ReverseWordsInString {
+    public static void main(String[] args) {
+        String s = "the sky is blue";
+        System.out.println(reverseWords("1"));
+    }
+
     public static String reverseWords(String s) {
         //去除字符串首尾的空格, 并以空格(一个或多个)切分字符串
         String[] words = s.trim().split("\\s+");
@@ -19,10 +24,5 @@ public class ReverseWordsInString {
             words[len-1-i] = temp;
         }
         return String.join(" ", words);
-    }
-
-    public static void main(String[] args) {
-        String s = "the sky is blue";
-        System.out.println(reverseWords("1"));
     }
 }

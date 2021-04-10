@@ -1,7 +1,5 @@
 package leetcode.problems;
 
-import leetcode.ListNode;
-
 /**
  * 合并两个有序的链表
  * https://leetcode.com/problems/merge-two-sorted-lists/

@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.problems;
 
 /**
  * 最大乘积子序列

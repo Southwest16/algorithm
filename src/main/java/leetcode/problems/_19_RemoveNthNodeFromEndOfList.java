@@ -1,7 +1,5 @@
 package leetcode.problems;
 
-import leetcode.ListNode;
-
 /**
  * 移除链表中倒数第n个结点
  * https://leetcode.com/problems/remove-nth-node-from-end-of-list/

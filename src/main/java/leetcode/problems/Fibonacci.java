@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.problems;
 
 /**
  * https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/

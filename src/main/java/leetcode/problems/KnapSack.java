@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.problems;
 
 /**
  * 0-1背包
