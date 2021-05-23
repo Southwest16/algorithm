@@ -55,7 +55,7 @@ public class _19_RemoveNthNodeFromEndOfList {
 		ListNode slow = dummy;
 		ListNode fast = dummy;
 		//移动fast指针，使slow和fast相隔n个节点
-		for (int i = 1; i <= n + 1; i++) {
+		for (int i = 0; i <= n; i++) {
 			fast = fast.next;
 		}
 
